@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- saved from url=(0012)about:srcdoc -->
+<html lang="en" class=" -webkit-"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+  <title>CodePen - Find emoji by description</title>
+  
+  
+  
+  
+  
+<style>
+  :root {
+	--search-height: 50px;
+}
+* {
+	box-sizing: border-box;
+}
+html, body {
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	width: 100%
+}
+
+body {
+	padding-top: calc(var(--search-height) * 1.4);
+}
+
+.result {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-bottom: 100px;
+}
+.emoji {
+	user-select: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 150px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.emoji--odd {
+	background: #eee;
+}
+.emoji-icon {
+	font-family: sans-serif;
+	font-size: 32pt;
+}
+.emoji-code {
+	font-family: monospace;
+	user-select: all;
+}
+.emoji-name {
+	font-size: 13pt;
+	width: 100%;
+	text-align: center;
+  white-space: wrap;
+	user-select: text;
+}
+.emoji:hover .emoji-icon:before {
+  transform: translateZ(0) scale(3) translateY(10px);
+	content: attr(icon);
+	position: absolute;
+	cursor: pointer;
+}
+label, .choosen {
+	position: fixed;
+	z-index: 2;
+	background: #eee;
+	display: block;
+	width: 100%;
+	height: var(--search-height);
+	top: 0;
+	left: 0;
+	padding: 10px;
+	border-bottom: solid 1px #aaa;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 13pt;
+}
+
+input {
+	font-size: 18pt;
+	margin: 0 15px 0 5px;
+	padding: 0 5px;
+	width: 200px;
+}
+*:focus {
+    outline: none;
+}
+.found {
+	margin: 0 4px;
+}
+
+.choosen {
+	top: auto;
+	bottom: 0;
+	border-top: solid 1px #aaa;
+	width: 10000px;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+  <label for="search">Fuzzy search for emoji: <input type="text" id="search" value="nerd" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"> <span class="found">113 emojis containing 139</span> icons</label>
+<div class="result"><div class="emoji emoji--even" title="Click to copy &amp;#x1f913;"><div class="emoji-icon select copy" title="nerd face - Click to copy" icon="🤓">🤓</div><div class="emoji-code copy">&amp;#x1f913;</div><div class="emoji-name">nerd face</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f60b;"><div class="emoji-icon select copy" title="face savoring food - Click to copy" icon="😋">😋</div><div class="emoji-code copy">&amp;#x1f60b;</div><div class="emoji-name">face savoring food</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f92d;"><div class="emoji-icon select copy" title="face with hand over mouth - Click to copy" icon="🤭">🤭</div><div class="emoji-code copy">&amp;#x1f92d;</div><div class="emoji-name">face with hand over mouth</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f924;"><div class="emoji-icon select copy" title="drooling face - Click to copy" icon="🤤">🤤</div><div class="emoji-code copy">&amp;#x1f924;</div><div class="emoji-name">drooling face</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f62d;"><div class="emoji-icon select copy" title="loudly crying face - Click to copy" icon="😭">😭</div><div class="emoji-code copy">&amp;#x1f62d;</div><div class="emoji-name">loudly crying face</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x2620;"><div class="emoji-icon select copy" title="skull and crossbones - Click to copy" icon="☠">☠</div><div class="emoji-code copy">&amp;#x2620;</div><div class="emoji-name">skull and crossbones</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f49f;"><div class="emoji-icon select copy" title="heart decoration - Click to copy" icon="💟">💟</div><div class="emoji-code copy">&amp;#x1f49f;</div><div class="emoji-name">heart decoration</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f4af;"><div class="emoji-icon select copy" title="hundred points - Click to copy" icon="💯">💯</div><div class="emoji-code copy">&amp;#x1f4af;</div><div class="emoji-name">hundred points</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f91a;"><div class="emoji-icon select copy" title="raised back of hand - Click to copy" icon="🤚">🤚</div><div class="emoji-code copy">&amp;#x1f91a;</div><div class="emoji-name">raised back of hand</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f590;"><div class="emoji-icon select copy" title="hand with fingers splayed - Click to copy" icon="🖐">🖐</div><div class="emoji-code copy">&amp;#x1f590;</div><div class="emoji-name">hand with fingers splayed</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x270b;"><div class="emoji-icon select copy" title="raised hand - Click to copy" icon="✋">✋</div><div class="emoji-code copy">&amp;#x270b;</div><div class="emoji-name">raised hand</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f91e;"><div class="emoji-icon select copy" title="crossed fingers - Click to copy" icon="🤞">🤞</div><div class="emoji-code copy">&amp;#x1f91e;</div><div class="emoji-name">crossed fingers</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f449;"><div class="emoji-icon select copy" title="backhand index pointing right - Click to copy" icon="👉">👉</div><div class="emoji-code copy">&amp;#x1f449;</div><div class="emoji-name">backhand index pointing right</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f595;"><div class="emoji-icon select copy" title="middle finger - Click to copy" icon="🖕">🖕</div><div class="emoji-code copy">&amp;#x1f595;</div><div class="emoji-name">middle finger</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f9bb;"><div class="emoji-icon select copy" title="⊛ ear with hearing aid - Click to copy" icon="🦻">🦻</div><div class="emoji-code copy">&amp;#x1f9bb;</div><div class="emoji-name">⊛ ear with hearing aid</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f471;"><div class="emoji-icon select copy" title="person: blond hair - Click to copy" icon="👱">👱</div><div class="emoji-code copy">&amp;#x1f471;</div><div class="emoji-name">person: blond hair</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f9d4;"><div class="emoji-icon select copy" title="man: beard - Click to copy" icon="🧔">🧔</div><div class="emoji-code copy">&amp;#x1f9d4;</div><div class="emoji-name">man: beard</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f468;"><div class="emoji-icon select copy" title="man: red hair - Click to copy" icon="👨">👨</div><div class="emoji-code copy">&amp;#x1f468;</div><div class="emoji-name">man: red hair</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x200d;"><div class="emoji-icon select copy" title="man: red hair - Click to copy" icon="‍">‍</div><div class="emoji-code copy">&amp;#x200d;</div><div class="emoji-name">man: red hair</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f9b0;"><div class="emoji-icon select copy" title="man: red hair - Click to copy" icon="🦰">🦰</div><div class="emoji-code copy">&amp;#x1f9b0;</div><div class="emoji-name">man: red hair</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f469;"><div class="emoji-icon select copy" title="woman: red hair - Click to copy" icon="👩">👩</div><div class="emoji-code copy">&amp;#x1f469;</div><div class="emoji-name">woman: red hair</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x200d;"><div class="emoji-icon select copy" title="woman: red hair - Click to copy" icon="‍">‍</div><div class="emoji-code copy">&amp;#x200d;</div><div class="emoji-name">woman: red hair</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f9b0;"><div class="emoji-icon select copy" title="woman: red hair - Click to copy" icon="🦰">🦰</div><div class="emoji-code copy">&amp;#x1f9b0;</div><div class="emoji-name">woman: red hair</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f9d3;"><div class="emoji-icon select copy" title="older person - Click to copy" icon="🧓">🧓</div><div class="emoji-code copy">&amp;#x1f9d3;</div><div class="emoji-name">older person</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f481;"><div class="emoji-icon select copy" title="person tipping hand - Click to copy" icon="💁">💁</div><div class="emoji-code copy">&amp;#x1f481;</div><div class="emoji-name">person tipping hand</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f64b;"><div class="emoji-icon select copy" title="person raising hand - Click to copy" icon="🙋">🙋</div><div class="emoji-code copy">&amp;#x1f64b;</div><div class="emoji-name">person raising hand</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f9cf;"><div class="emoji-icon select copy" title="⊛ deaf person - Click to copy" icon="🧏">🧏</div><div class="emoji-code copy">&amp;#x1f9cf;</div><div class="emoji-name">⊛ deaf person</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f9d5;"><div class="emoji-icon select copy" title="woman with headscarf - Click to copy" icon="🧕">🧕</div><div class="emoji-code copy">&amp;#x1f9d5;</div><div class="emoji-name">woman with headscarf</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f931;"><div class="emoji-icon select copy" title="breast-feeding - Click to copy" icon="🤱">🤱</div><div class="emoji-code copy">&amp;#x1f931;</div><div class="emoji-name">breast-feeding</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f9cd;"><div class="emoji-icon select copy" title="⊛ person standing - Click to copy" icon="🧍">🧍</div><div class="emoji-code copy">&amp;#x1f9cd;</div><div class="emoji-name">⊛ person standing</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f468;"><div class="emoji-icon select copy" title="⊛ man in motorized wheelchair - Click to copy" icon="👨">👨</div><div class="emoji-code copy">&amp;#x1f468;</div><div class="emoji-name">⊛ man in motorized wheelchair</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x200d;"><div class="emoji-icon select copy" title="⊛ man in motorized wheelchair - Click to copy" icon="‍">‍</div><div class="emoji-code copy">&amp;#x200d;</div><div class="emoji-name">⊛ man in motorized wheelchair</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f9bc;"><div class="emoji-icon select copy" title="⊛ man in motorized wheelchair - Click to copy" icon="🦼">🦼</div><div class="emoji-code copy">&amp;#x1f9bc;</div><div class="emoji-name">⊛ man in motorized wheelchair</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f469;"><div class="emoji-icon select copy" title="⊛ woman in motorized wheelchair - Click to copy" icon="👩">👩</div><div class="emoji-code copy">&amp;#x1f469;</div><div class="emoji-name">⊛ woman in motorized wheelchair</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x200d;"><div class="emoji-icon select copy" title="⊛ woman in motorized wheelchair - Click to copy" icon="‍">‍</div><div class="emoji-code copy">&amp;#x200d;</div><div class="emoji-name">⊛ woman in motorized wheelchair</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f9bc;"><div class="emoji-icon select copy" title="⊛ woman in motorized wheelchair - Click to copy" icon="🦼">🦼</div><div class="emoji-code copy">&amp;#x1f9bc;</div><div class="emoji-name">⊛ woman in motorized wheelchair</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f3c2;"><div class="emoji-icon select copy" title="snowboarder - Click to copy" icon="🏂">🏂</div><div class="emoji-code copy">&amp;#x1f3c2;</div><div class="emoji-name">snowboarder</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f93e;"><div class="emoji-icon select copy" title="person playing handball - Click to copy" icon="🤾">🤾</div><div class="emoji-code copy">&amp;#x1f93e;</div><div class="emoji-name">person playing handball</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f6cc;"><div class="emoji-icon select copy" title="person in bed - Click to copy" icon="🛌">🛌</div><div class="emoji-code copy">&amp;#x1f6cc;</div><div class="emoji-name">person in bed</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f432;"><div class="emoji-icon select copy" title="dragon face - Click to copy" icon="🐲">🐲</div><div class="emoji-code copy">&amp;#x1f432;</div><div class="emoji-name">dragon face</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f343;"><div class="emoji-icon select copy" title="leaf fluttering in wind - Click to copy" icon="🍃">🍃</div><div class="emoji-code copy">&amp;#x1f343;</div><div class="emoji-name">leaf fluttering in wind</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f957;"><div class="emoji-icon select copy" title="green salad - Click to copy" icon="🥗">🥗</div><div class="emoji-code copy">&amp;#x1f957;</div><div class="emoji-name">green salad</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f37d;"><div class="emoji-icon select copy" title="fork and knife with plate - Click to copy" icon="🍽">🍽</div><div class="emoji-code copy">&amp;#x1f37d;</div><div class="emoji-name">fork and knife with plate</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f374;"><div class="emoji-icon select copy" title="fork and knife - Click to copy" icon="🍴">🍴</div><div class="emoji-code copy">&amp;#x1f374;</div><div class="emoji-name">fork and knife</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f310;"><div class="emoji-icon select copy" title="globe with meridians - Click to copy" icon="🌐">🌐</div><div class="emoji-code copy">&amp;#x1f310;</div><div class="emoji-name">globe with meridians</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f3dd;"><div class="emoji-icon select copy" title="desert island - Click to copy" icon="🏝">🏝</div><div class="emoji-code copy">&amp;#x1f3dd;</div><div class="emoji-name">desert island</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f3e1;"><div class="emoji-icon select copy" title="house with garden - Click to copy" icon="🏡">🏡</div><div class="emoji-code copy">&amp;#x1f3e1;</div><div class="emoji-name">house with garden</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f3ec;"><div class="emoji-icon select copy" title="department store - Click to copy" icon="🏬">🏬</div><div class="emoji-code copy">&amp;#x1f3ec;</div><div class="emoji-name">department store</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f309;"><div class="emoji-icon select copy" title="bridge at night - Click to copy" icon="🌉">🌉</div><div class="emoji-code copy">&amp;#x1f309;</div><div class="emoji-name">bridge at night</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f684;"><div class="emoji-icon select copy" title="high-speed train - Click to copy" icon="🚄">🚄</div><div class="emoji-code copy">&amp;#x1f684;</div><div class="emoji-name">high-speed train</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f6eb;"><div class="emoji-icon select copy" title="airplane departure - Click to copy" icon="🛫">🛫</div><div class="emoji-code copy">&amp;#x1f6eb;</div><div class="emoji-name">airplane departure</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x231b;"><div class="emoji-icon select copy" title="hourglass done - Click to copy" icon="⌛">⌛</div><div class="emoji-code copy">&amp;#x231b;</div><div class="emoji-name">hourglass done</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x23f3;"><div class="emoji-icon select copy" title="hourglass not done - Click to copy" icon="⏳">⏳</div><div class="emoji-code copy">&amp;#x23f3;</div><div class="emoji-name">hourglass not done</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1fa90;"><div class="emoji-icon select copy" title="⊛ ringed planet - Click to copy" icon="🪐">🪐</div><div class="emoji-code copy">&amp;#x1fa90;</div><div class="emoji-name">⊛ ringed planet</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f325;"><div class="emoji-icon select copy" title="sun behind large cloud - Click to copy" icon="🌥">🌥</div><div class="emoji-code copy">&amp;#x1f325;</div><div class="emoji-name">sun behind large cloud</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f326;"><div class="emoji-icon select copy" title="sun behind rain cloud - Click to copy" icon="🌦">🌦</div><div class="emoji-code copy">&amp;#x1f326;</div><div class="emoji-name">sun behind rain cloud</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x2614;"><div class="emoji-icon select copy" title="umbrella with rain drops - Click to copy" icon="☔">☔</div><div class="emoji-code copy">&amp;#x2614;</div><div class="emoji-name">umbrella with rain drops</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x26f1;"><div class="emoji-icon select copy" title="umbrella on ground - Click to copy" icon="⛱">⛱</div><div class="emoji-code copy">&amp;#x26f1;</div><div class="emoji-name">umbrella on ground</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f38d;"><div class="emoji-icon select copy" title="pine decoration - Click to copy" icon="🎍">🎍</div><div class="emoji-code copy">&amp;#x1f38d;</div><div class="emoji-name">pine decoration</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f9e7;"><div class="emoji-icon select copy" title="red envelope - Click to copy" icon="🧧">🧧</div><div class="emoji-code copy">&amp;#x1f9e7;</div><div class="emoji-name">red envelope</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f397;"><div class="emoji-icon select copy" title="reminder ribbon - Click to copy" icon="🎗">🎗</div><div class="emoji-code copy">&amp;#x1f397;</div><div class="emoji-name">reminder ribbon</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f004;"><div class="emoji-icon select copy" title="mahjong red dragon - Click to copy" icon="🀄">🀄</div><div class="emoji-code copy">&amp;#x1f004;</div><div class="emoji-name">mahjong red dragon</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f3b4;"><div class="emoji-icon select copy" title="flower playing cards - Click to copy" icon="🎴">🎴</div><div class="emoji-code copy">&amp;#x1f3b4;</div><div class="emoji-name">flower playing cards</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f399;"><div class="emoji-icon select copy" title="studio microphone - Click to copy" icon="🎙">🎙</div><div class="emoji-code copy">&amp;#x1f399;</div><div class="emoji-name">studio microphone</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f50e;"><div class="emoji-icon select copy" title="magnifying glass tilted right - Click to copy" icon="🔎">🔎</div><div class="emoji-code copy">&amp;#x1f50e;</div><div class="emoji-name">magnifying glass tilted right</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f3ee;"><div class="emoji-icon select copy" title="red paper lantern - Click to copy" icon="🏮">🏮</div><div class="emoji-code copy">&amp;#x1f3ee;</div><div class="emoji-name">red paper lantern</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f4d4;"><div class="emoji-icon select copy" title="notebook with decorative cover - Click to copy" icon="📔">📔</div><div class="emoji-code copy">&amp;#x1f4d4;</div><div class="emoji-name">notebook with decorative cover</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f5de;"><div class="emoji-icon select copy" title="rolled-up newspaper - Click to copy" icon="🗞">🗞</div><div class="emoji-code copy">&amp;#x1f5de;</div><div class="emoji-name">rolled-up newspaper</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f4b5;"><div class="emoji-icon select copy" title="dollar banknote - Click to copy" icon="💵">💵</div><div class="emoji-code copy">&amp;#x1f4b5;</div><div class="emoji-name">dollar banknote</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f4b2;"><div class="emoji-icon select copy" title="heavy dollar sign - Click to copy" icon="💲">💲</div><div class="emoji-code copy">&amp;#x1f4b2;</div><div class="emoji-name">heavy dollar sign</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f4ec;"><div class="emoji-icon select copy" title="open mailbox with raised flag - Click to copy" icon="📬">📬</div><div class="emoji-code copy">&amp;#x1f4ec;</div><div class="emoji-name">open mailbox with raised flag</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f4ed;"><div class="emoji-icon select copy" title="open mailbox with lowered flag - Click to copy" icon="📭">📭</div><div class="emoji-code copy">&amp;#x1f4ed;</div><div class="emoji-name">open mailbox with lowered flag</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f4c2;"><div class="emoji-icon select copy" title="open file folder - Click to copy" icon="📂">📂</div><div class="emoji-code copy">&amp;#x1f4c2;</div><div class="emoji-name">open file folder</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f5c2;"><div class="emoji-icon select copy" title="card index dividers - Click to copy" icon="🗂">🗂</div><div class="emoji-code copy">&amp;#x1f5c2;</div><div class="emoji-name">card index dividers</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f4c5;"><div class="emoji-icon select copy" title="calendar - Click to copy" icon="📅">📅</div><div class="emoji-code copy">&amp;#x1f4c5;</div><div class="emoji-name">calendar</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f4c6;"><div class="emoji-icon select copy" title="tear-off calendar - Click to copy" icon="📆">📆</div><div class="emoji-code copy">&amp;#x1f4c6;</div><div class="emoji-name">tear-off calendar</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f5d2;"><div class="emoji-icon select copy" title="spiral notepad - Click to copy" icon="🗒">🗒</div><div class="emoji-code copy">&amp;#x1f5d2;</div><div class="emoji-name">spiral notepad</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f5d3;"><div class="emoji-icon select copy" title="spiral calendar - Click to copy" icon="🗓">🗓</div><div class="emoji-code copy">&amp;#x1f5d3;</div><div class="emoji-name">spiral calendar</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f4c7;"><div class="emoji-icon select copy" title="card index - Click to copy" icon="📇">📇</div><div class="emoji-code copy">&amp;#x1f4c7;</div><div class="emoji-name">card index</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f4c9;"><div class="emoji-icon select copy" title="chart decreasing - Click to copy" icon="📉">📉</div><div class="emoji-code copy">&amp;#x1f4c9;</div><div class="emoji-name">chart decreasing</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f587;"><div class="emoji-icon select copy" title="linked paperclips - Click to copy" icon="🖇">🖇</div><div class="emoji-code copy">&amp;#x1f587;</div><div class="emoji-name">linked paperclips</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x2692;"><div class="emoji-icon select copy" title="hammer and pick - Click to copy" icon="⚒">⚒</div><div class="emoji-code copy">&amp;#x2692;</div><div class="emoji-name">hammer and pick</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f6e0;"><div class="emoji-icon select copy" title="hammer and wrench - Click to copy" icon="🛠">🛠</div><div class="emoji-code copy">&amp;#x1f6e0;</div><div class="emoji-name">hammer and wrench</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f6b8;"><div class="emoji-icon select copy" title="children crossing - Click to copy" icon="🚸">🚸</div><div class="emoji-code copy">&amp;#x1f6b8;</div><div class="emoji-name">children crossing</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f6b7;"><div class="emoji-icon select copy" title="no pedestrians - Click to copy" icon="🚷">🚷</div><div class="emoji-code copy">&amp;#x1f6b7;</div><div class="emoji-name">no pedestrians</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f51e;"><div class="emoji-icon select copy" title="no one under eighteen - Click to copy" icon="🔞">🔞</div><div class="emoji-code copy">&amp;#x1f51e;</div><div class="emoji-name">no one under eighteen</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x2199;"><div class="emoji-icon select copy" title="down-left arrow - Click to copy" icon="↙">↙</div><div class="emoji-code copy">&amp;#x2199;</div><div class="emoji-name">down-left arrow</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f51a;"><div class="emoji-icon select copy" title="END arrow - Click to copy" icon="🔚">🔚</div><div class="emoji-code copy">&amp;#x1f51a;</div><div class="emoji-name">END arrow</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x262a;"><div class="emoji-icon select copy" title="star and crescent - Click to copy" icon="☪">☪</div><div class="emoji-code copy">&amp;#x262a;</div><div class="emoji-name">star and crescent</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f52f;"><div class="emoji-icon select copy" title="dotted six-pointed star - Click to copy" icon="🔯">🔯</div><div class="emoji-code copy">&amp;#x1f52f;</div><div class="emoji-name">dotted six-pointed star</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x23fa;"><div class="emoji-icon select copy" title="record button - Click to copy" icon="⏺">⏺</div><div class="emoji-code copy">&amp;#x23fa;</div><div class="emoji-name">record button</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f4f3;"><div class="emoji-icon select copy" title="vibration mode - Click to copy" icon="📳">📳</div><div class="emoji-code copy">&amp;#x1f4f3;</div><div class="emoji-name">vibration mode</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f531;"><div class="emoji-icon select copy" title="trident emblem - Click to copy" icon="🔱">🔱</div><div class="emoji-code copy">&amp;#x1f531;</div><div class="emoji-name">trident emblem</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x2734;"><div class="emoji-icon select copy" title="eight-pointed star - Click to copy" icon="✴">✴</div><div class="emoji-code copy">&amp;#x2734;</div><div class="emoji-name">eight-pointed star</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x203c;"><div class="emoji-icon select copy" title="double exclamation mark - Click to copy" icon="‼">‼</div><div class="emoji-code copy">&amp;#x203c;</div><div class="emoji-name">double exclamation mark</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f22f;"><div class="emoji-icon select copy" title="Japanese “reserved” button - Click to copy" icon="🈯">🈯</div><div class="emoji-code copy">&amp;#x1f22f;</div><div class="emoji-name">Japanese “reserved” button</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f232;"><div class="emoji-icon select copy" title="Japanese “prohibited” button - Click to copy" icon="🈲">🈲</div><div class="emoji-code copy">&amp;#x1f232;</div><div class="emoji-name">Japanese “prohibited” button</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f234;"><div class="emoji-icon select copy" title="Japanese “passing grade” button - Click to copy" icon="🈴">🈴</div><div class="emoji-code copy">&amp;#x1f234;</div><div class="emoji-name">Japanese “passing grade” button</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f536;"><div class="emoji-icon select copy" title="large orange diamond - Click to copy" icon="🔶">🔶</div><div class="emoji-code copy">&amp;#x1f536;</div><div class="emoji-name">large orange diamond</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f537;"><div class="emoji-icon select copy" title="large blue diamond - Click to copy" icon="🔷">🔷</div><div class="emoji-code copy">&amp;#x1f537;</div><div class="emoji-name">large blue diamond</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f538;"><div class="emoji-icon select copy" title="small orange diamond - Click to copy" icon="🔸">🔸</div><div class="emoji-code copy">&amp;#x1f538;</div><div class="emoji-name">small orange diamond</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f53a;"><div class="emoji-icon select copy" title="red triangle pointed up - Click to copy" icon="🔺">🔺</div><div class="emoji-code copy">&amp;#x1f53a;</div><div class="emoji-name">red triangle pointed up</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f53b;"><div class="emoji-icon select copy" title="red triangle pointed down - Click to copy" icon="🔻">🔻</div><div class="emoji-code copy">&amp;#x1f53b;</div><div class="emoji-name">red triangle pointed down</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1e6;"><div class="emoji-icon select copy" title="flag: United Arab Emirates - Click to copy" icon="🇦">🇦</div><div class="emoji-code copy">&amp;#x1f1e6;</div><div class="emoji-name">flag: United Arab Emirates</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1ea;"><div class="emoji-icon select copy" title="flag: United Arab Emirates - Click to copy" icon="🇪">🇪</div><div class="emoji-code copy">&amp;#x1f1ea;</div><div class="emoji-name">flag: United Arab Emirates</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1e7;"><div class="emoji-icon select copy" title="flag: Caribbean Netherlands - Click to copy" icon="🇧">🇧</div><div class="emoji-code copy">&amp;#x1f1e7;</div><div class="emoji-name">flag: Caribbean Netherlands</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1f6;"><div class="emoji-icon select copy" title="flag: Caribbean Netherlands - Click to copy" icon="🇶">🇶</div><div class="emoji-code copy">&amp;#x1f1f6;</div><div class="emoji-name">flag: Caribbean Netherlands</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1e8;"><div class="emoji-icon select copy" title="flag: Switzerland - Click to copy" icon="🇨">🇨</div><div class="emoji-code copy">&amp;#x1f1e8;</div><div class="emoji-name">flag: Switzerland</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1ed;"><div class="emoji-icon select copy" title="flag: Switzerland - Click to copy" icon="🇭">🇭</div><div class="emoji-code copy">&amp;#x1f1ed;</div><div class="emoji-name">flag: Switzerland</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1e8;"><div class="emoji-icon select copy" title="flag: Clipperton Island - Click to copy" icon="🇨">🇨</div><div class="emoji-code copy">&amp;#x1f1e8;</div><div class="emoji-name">flag: Clipperton Island</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1f5;"><div class="emoji-icon select copy" title="flag: Clipperton Island - Click to copy" icon="🇵">🇵</div><div class="emoji-code copy">&amp;#x1f1f5;</div><div class="emoji-name">flag: Clipperton Island</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1e9;"><div class="emoji-icon select copy" title="flag: Denmark - Click to copy" icon="🇩">🇩</div><div class="emoji-code copy">&amp;#x1f1e9;</div><div class="emoji-name">flag: Denmark</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1f0;"><div class="emoji-icon select copy" title="flag: Denmark - Click to copy" icon="🇰">🇰</div><div class="emoji-code copy">&amp;#x1f1f0;</div><div class="emoji-name">flag: Denmark</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1e9;"><div class="emoji-icon select copy" title="flag: Dominican Republic - Click to copy" icon="🇩">🇩</div><div class="emoji-code copy">&amp;#x1f1e9;</div><div class="emoji-name">flag: Dominican Republic</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1f4;"><div class="emoji-icon select copy" title="flag: Dominican Republic - Click to copy" icon="🇴">🇴</div><div class="emoji-code copy">&amp;#x1f1f4;</div><div class="emoji-name">flag: Dominican Republic</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1eb;"><div class="emoji-icon select copy" title="flag: Faroe Islands - Click to copy" icon="🇫">🇫</div><div class="emoji-code copy">&amp;#x1f1eb;</div><div class="emoji-name">flag: Faroe Islands</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1f4;"><div class="emoji-icon select copy" title="flag: Faroe Islands - Click to copy" icon="🇴">🇴</div><div class="emoji-code copy">&amp;#x1f1f4;</div><div class="emoji-name">flag: Faroe Islands</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1ec;"><div class="emoji-icon select copy" title="flag: Grenada - Click to copy" icon="🇬">🇬</div><div class="emoji-code copy">&amp;#x1f1ec;</div><div class="emoji-name">flag: Grenada</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1e9;"><div class="emoji-icon select copy" title="flag: Grenada - Click to copy" icon="🇩">🇩</div><div class="emoji-code copy">&amp;#x1f1e9;</div><div class="emoji-name">flag: Grenada</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1ec;"><div class="emoji-icon select copy" title="flag: Greenland - Click to copy" icon="🇬">🇬</div><div class="emoji-code copy">&amp;#x1f1ec;</div><div class="emoji-name">flag: Greenland</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1f1;"><div class="emoji-icon select copy" title="flag: Greenland - Click to copy" icon="🇱">🇱</div><div class="emoji-code copy">&amp;#x1f1f1;</div><div class="emoji-name">flag: Greenland</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1ec;"><div class="emoji-icon select copy" title="flag: South Georgia &amp; South Sandwich Islands - Click to copy" icon="🇬">🇬</div><div class="emoji-code copy">&amp;#x1f1ec;</div><div class="emoji-name">flag: South Georgia &amp; South Sandwich Islands</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1f8;"><div class="emoji-icon select copy" title="flag: South Georgia &amp; South Sandwich Islands - Click to copy" icon="🇸">🇸</div><div class="emoji-code copy">&amp;#x1f1f8;</div><div class="emoji-name">flag: South Georgia &amp; South Sandwich Islands</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1ed;"><div class="emoji-icon select copy" title="flag: Heard &amp; McDonald Islands - Click to copy" icon="🇭">🇭</div><div class="emoji-code copy">&amp;#x1f1ed;</div><div class="emoji-name">flag: Heard &amp; McDonald Islands</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1f2;"><div class="emoji-icon select copy" title="flag: Heard &amp; McDonald Islands - Click to copy" icon="🇲">🇲</div><div class="emoji-code copy">&amp;#x1f1f2;</div><div class="emoji-name">flag: Heard &amp; McDonald Islands</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1ee;"><div class="emoji-icon select copy" title="flag: Ireland - Click to copy" icon="🇮">🇮</div><div class="emoji-code copy">&amp;#x1f1ee;</div><div class="emoji-name">flag: Ireland</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1ea;"><div class="emoji-icon select copy" title="flag: Ireland - Click to copy" icon="🇪">🇪</div><div class="emoji-code copy">&amp;#x1f1ea;</div><div class="emoji-name">flag: Ireland</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1ee;"><div class="emoji-icon select copy" title="flag: British Indian Ocean Territory - Click to copy" icon="🇮">🇮</div><div class="emoji-code copy">&amp;#x1f1ee;</div><div class="emoji-name">flag: British Indian Ocean Territory</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1f4;"><div class="emoji-icon select copy" title="flag: British Indian Ocean Territory - Click to copy" icon="🇴">🇴</div><div class="emoji-code copy">&amp;#x1f1f4;</div><div class="emoji-name">flag: British Indian Ocean Territory</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1f2;"><div class="emoji-icon select copy" title="flag: North Macedonia - Click to copy" icon="🇲">🇲</div><div class="emoji-code copy">&amp;#x1f1f2;</div><div class="emoji-name">flag: North Macedonia</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1f0;"><div class="emoji-icon select copy" title="flag: North Macedonia - Click to copy" icon="🇰">🇰</div><div class="emoji-code copy">&amp;#x1f1f0;</div><div class="emoji-name">flag: North Macedonia</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1f2;"><div class="emoji-icon select copy" title="flag: Northern Mariana Islands - Click to copy" icon="🇲">🇲</div><div class="emoji-code copy">&amp;#x1f1f2;</div><div class="emoji-name">flag: Northern Mariana Islands</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1f5;"><div class="emoji-icon select copy" title="flag: Northern Mariana Islands - Click to copy" icon="🇵">🇵</div><div class="emoji-code copy">&amp;#x1f1f5;</div><div class="emoji-name">flag: Northern Mariana Islands</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1f3;"><div class="emoji-icon select copy" title="flag: Netherlands - Click to copy" icon="🇳">🇳</div><div class="emoji-code copy">&amp;#x1f1f3;</div><div class="emoji-name">flag: Netherlands</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1f1;"><div class="emoji-icon select copy" title="flag: Netherlands - Click to copy" icon="🇱">🇱</div><div class="emoji-code copy">&amp;#x1f1f1;</div><div class="emoji-name">flag: Netherlands</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1f8;"><div class="emoji-icon select copy" title="flag: Svalbard &amp; Jan Mayen - Click to copy" icon="🇸">🇸</div><div class="emoji-code copy">&amp;#x1f1f8;</div><div class="emoji-name">flag: Svalbard &amp; Jan Mayen</div></div><div class="emoji emoji--odd" title="Click to copy &amp;#x1f1ef;"><div class="emoji-icon select copy" title="flag: Svalbard &amp; Jan Mayen - Click to copy" icon="🇯">🇯</div><div class="emoji-code copy">&amp;#x1f1ef;</div><div class="emoji-name">flag: Svalbard &amp; Jan Mayen</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1fb;"><div class="emoji-icon select copy" title="flag: St. Vincent &amp; Grenadines - Click to copy" icon="🇻">🇻</div><div class="emoji-code copy">&amp;#x1f1fb;</div><div class="emoji-name">flag: St. Vincent &amp; Grenadines</div></div><div class="emoji emoji--even" title="Click to copy &amp;#x1f1e8;"><div class="emoji-icon select copy" title="flag: St. Vincent &amp; Grenadines - Click to copy" icon="🇨">🇨</div><div class="emoji-code copy">&amp;#x1f1e8;</div><div class="emoji-name">flag: St. Vincent &amp; Grenadines</div></div></div>
+<textarea class="choosen" placeholder="Click the ones you want to copy"></textarea>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9729/emojis.js"></script>
+      <script id="rendered-js">
+      const eleSearch = document.getElementById("search");
+const eleResult = document.querySelector(".result");
+const eleFound = document.querySelector(".found");
+const eleChoosen = document.querySelector(".choosen");
+let found = { "": emojis };
+eleSearch.addEventListener("input", search);
+eleResult.addEventListener("click", choose);
+
+function search() {
+  const whatWeSearchFor = eleSearch.value.toLowerCase().trim();
+  eleSearch.innerHTML = "";
+  if (whatWeSearchFor) {
+    const chars = whatWeSearchFor.split("");
+    if (found[whatWeSearchFor]) {
+      hit = true;
+    } else {
+      var substr = "",
+      hit = true;
+      for (var i = 0; i < chars.length && hit; i++) {if (window.CP.shouldStopExecution(0)) break;
+        const char = chars[i];
+        substr += char;
+        if (!found[substr]) {
+          const previous = found[substr.substr(0, substr.length - 1)];
+          found[substr] = previous.filter((emoji, i) => {
+            return emoji.name.toLowerCase().indexOf(char) !== -1;
+          });
+        }
+        hit = found[substr].length > 0;
+      }window.CP.exitedLoop(0);
+    }
+
+    let result = "";
+    let count = 0;
+    if (found[whatWeSearchFor]) {
+      let odd = false;
+      found[whatWeSearchFor].
+      sort((a, b) => {
+        // if the entered actually exists as a complete word, favour it
+        let ia = a.name.indexOf(whatWeSearchFor);
+        let ib = b.name.indexOf(whatWeSearchFor);
+        ia = ia === -1 ? 10000 : ia;
+        ib = ib === -1 ? 10000 : ib;
+        return ia < ib ? -1 : 0;
+      }).
+      forEach(emoji => {
+        emoji.code.forEach(code => {
+          count++;
+          result += `<div class="emoji emoji--${
+          odd ? "odd" : "even"
+          }" title="Click to copy &amp#x${code};"><div class="emoji-icon select copy" title="${emoji.name +
+          " - Click to copy"}" icon="&#x${code};">&#x${code};</div><div class="emoji-code copy">&amp#x${code};</div><div class="emoji-name">${
+          emoji.name
+          }</div></div>`;
+        });
+        odd = !odd;
+      });
+    } else {
+      result = "<div>No hits</div>";
+    }
+    eleFound.innerText = `${found[whatWeSearchFor].length} emojis containing ${count}`;
+    eleResult.innerHTML = result;
+    document.body.scrollIntoView();
+  }
+}
+
+function choose(evt) {
+  let target = evt.target;
+  if (target.classList.contains("copy")) {
+    eleChoosen.innerHTML += target.innerHTML;
+  } else {
+    if (target.classList.contains("emoji")) {
+      eleChoosen.innerHTML += target.querySelector(".emoji-code").innerHTML;
+    }
+  }
+}
+
+search();
+      //# sourceURL=pen.js
+    </script>
+
+  
+  
+
+
+
+
+ 
+</body></html>
